@@ -53,7 +53,9 @@ Every task follows: **Question -> Options -> Decision -> Draft -> Approval**
   its orchestrating skill named; see `.claude/rules/agent-memory.md`)
 - Agents MUST show drafts or summaries before requesting approval
 - Multi-file changes require explicit approval for the full changeset
-- No commits without user instruction
+- Commit after each working step, with a clear message (Emberhollow rule, see
+  "How to work" below; it overrides the studio default of no commits without
+  user instruction). Pushing still needs user instruction.
 - A skipped or dismissed question is not an answer: act on nothing, re-ask in
   plain text and wait
 - Started outside this file's folder? Warn first: hooks, deny rules and the
