@@ -25,6 +25,7 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
      step and /project-settings (engine.name) write
      @docs/engine-reference/<engine>/VERSION.md here for the chosen engine. Skills
      that need the pinned version read that file on demand either way. -->
+@docs/engine-reference/godot/VERSION.md
 
 
 ## Technical Preferences
@@ -79,3 +80,39 @@ elsewhere in the repo, so they are restated here rather than lost:
 - **Helpers in `.claude/scripts/` emit observations, never verdicts.** A script
   that scores or judges will eventually contradict a mode or override it cannot
   see. (Cited by `artifact-check.sh` and `adr-dep-graph.sh`.)
+
+---
+
+# Emberhollow: project rules for Claude
+
+A cozy-but-dark blacksmith game: Coral Island-style life sim with forging instead of farming, Cult of the Lamb-style art and combat. Read `design/game-brief.md` before any task. It is the design source of truth for this repo.
+
+## Who you work with
+
+Marcel is the designer and owner. He is learning game development and front-end engineering.
+- Keep explanations short and plain. Lead with what to do next, and use numbered steps.
+- When something is his decision (design, feel, scope), offer two or three options and ask. Don't guess.
+- After each feature, say exactly what to play-test and what "good" looks like.
+
+## Tech rules
+
+- **Engine:** Godot 4 (standard build), GDScript only. No C#, no GDExtension, nothing that blocks a web export.
+- **Content in data:** recipes, races, items, enemies, zones, dialogue, and balance numbers live in JSON under `data/`. Never hard-code tuning values in scripts.
+- **Autoloads:** `GameState` holds day, time, inventory, coin, reputation, relationships, and a `reset()` method. `EventBus` holds cross-scene signals (`item_forged`, `day_ended`, and so on). Scenes talk through these, not by reaching into each other.
+- **Input:** everything goes through the Input Map. Keyboard and gamepad trigger the same actions. Actions are per player (`p1_attack`, and so on) so co-op can be added later. No raw key checks.
+- **Test hook:** keep a `debug_state_text()` function that returns the current game state as readable text or JSON, so Claude can check state during automated runs.
+- **Saves:** go to `user://`, so they work on desktop, web, and Android.
+- **Art:** placeholder shapes in the brief's palette until Marcel supplies ArtCraft art. Character art is split into parts for Skeleton2D rigs. Use only original assets, never copies of Cult of the Lamb or any other game's art.
+
+## How to work
+
+1. One feature at a time: plan briefly, build, test, fix, then summarize.
+2. After every change, run the project headless (`godot --headless --path . --quit-after <frames>`) or the test scene, and fix every error and warning before reporting done.
+3. Commit to Git after each working step, with a clear message.
+4. Keep `docs/STATE.md` updated: what exists, what's next, known issues. Any model or person should be able to pick up from it.
+5. Prototypes go in `prototypes/<name>/` as standalone scenes and never import from the main game.
+6. If the brief is unclear or conflicts with a request, stop and ask Marcel.
+
+## Local tools
+
+Godot executable: C:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe
