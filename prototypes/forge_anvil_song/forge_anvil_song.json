@@ -1,0 +1,141 @@
+{
+  "tiers": [
+    { "name": "Crude", "min_score": 0 },
+    { "name": "Fine", "min_score": 40 },
+    { "name": "Superior", "min_score": 60 },
+    { "name": "Masterwork", "min_score": 78 },
+    { "name": "Legendary", "min_score": 92 }
+  ],
+  "ratings": [
+    { "name": "PERFECT", "min_score": 95 },
+    { "name": "GOOD", "min_score": 65 },
+    { "name": "OK", "min_score": 30 },
+    { "name": "MISS", "min_score": 0 }
+  ],
+  "anvil_lines": {
+    "Crude": [
+      "I have seen better edges on a spoon. A wooden spoon.",
+      "Congratulations. You have invented the bent nail.",
+      "My mentor once forged worse than this. Once. He was on fire at the time."
+    ],
+    "Fine": [
+      "It will cut butter. Warm butter. That is still progress, apprentice.",
+      "Fine. Literally. That is the word for it. Do not get excited.",
+      "It holds together, which is more than I expected from you."
+    ],
+    "Superior": [
+      "Hm. I only winced twice. Keep going.",
+      "Someone might actually pay for that. Do not tell them who made it.",
+      "Not bad. I said not bad. Stop grinning."
+    ],
+    "Masterwork": [
+      "I felt that one in my iron. Do it again before I change my mind.",
+      "Careful. Keep this up and I will have nothing left to complain about.",
+      "My old master would have nodded at that. He never nodded at me."
+    ],
+    "Legendary": [
+      "...I have no notes. I hate having no notes.",
+      "Three hundred years bound in iron, and that is the best thing ever made on my back.",
+      "Do not look at me. I am not crying. Anvils do not cry. It is quench water."
+    ]
+  },
+  "text": {
+    "title": "Prototype 3: Anvil Song",
+    "ready": "Forge to the beat. Notes slide in from the right; press as each one reaches its ring.",
+    "start_prompt": "Press SPACE / A to start",
+    "retry_prompt": "Press SPACE / A to forge again",
+    "instruction": "Top lane: F / X pumps the bellows.   Bottom lane: SPACE / A swings the hammer.   Long notes: hold, then let go at the end.",
+    "lead_in": "Get ready",
+    "primary_label": "SPACE / A",
+    "secondary_label": "F / X"
+  },
+  "song": {
+    "bpm": 100,
+    "lead_in_beats": 4,
+    "outro_beats": 2,
+    "scroll_pixels_per_beat": 150,
+    "perfect_window_seconds": 0.045,
+    "miss_window_seconds": 0.16
+  },
+  "sound": {
+    "tick_hz": 1320,
+    "tick_seconds": 0.04,
+    "hit_hz": 330,
+    "hit_seconds": 0.14,
+    "volume_db": -10
+  },
+  "phrases": [
+    {
+      "stage": "Heat",
+      "beats": 8,
+      "notes": [
+        { "beat": 0, "button": "secondary" },
+        { "beat": 2, "button": "secondary" },
+        { "beat": 4, "button": "secondary" },
+        { "beat": 5, "button": "secondary" },
+        { "beat": 6, "button": "secondary" },
+        { "beat": 7, "button": "secondary" }
+      ]
+    },
+    {
+      "stage": "Hammer",
+      "beats": 16,
+      "notes": [
+        { "beat": 0, "button": "primary" },
+        { "beat": 1, "button": "primary" },
+        { "beat": 2, "button": "primary" },
+        { "beat": 3, "button": "primary" },
+        { "beat": 4, "button": "primary" },
+        { "beat": 4.5, "button": "primary" },
+        { "beat": 5, "button": "primary" },
+        { "beat": 6, "button": "primary" },
+        { "beat": 7, "button": "primary" },
+        { "beat": 8, "button": "primary" },
+        { "beat": 9, "button": "primary" },
+        { "beat": 10, "button": "primary" },
+        { "beat": 10.5, "button": "primary" },
+        { "beat": 11, "button": "primary" },
+        { "beat": 12, "button": "primary" },
+        { "beat": 13, "button": "primary" },
+        { "beat": 14, "button": "primary" },
+        { "beat": 14.5, "button": "primary" },
+        { "beat": 15, "button": "primary" }
+      ]
+    },
+    {
+      "stage": "Quench",
+      "beats": 8,
+      "notes": [
+        { "beat": 0, "button": "secondary" },
+        { "beat": 1, "button": "primary", "hold_beats": 4 },
+        { "beat": 6, "button": "primary" },
+        { "beat": 7, "button": "primary" }
+      ]
+    },
+    {
+      "stage": "Finish",
+      "beats": 8,
+      "notes": [
+        { "beat": 0, "button": "primary" },
+        { "beat": 1, "button": "secondary" },
+        { "beat": 2, "button": "primary" },
+        { "beat": 2.5, "button": "primary" },
+        { "beat": 3, "button": "secondary" },
+        { "beat": 4, "button": "primary" },
+        { "beat": 5, "button": "secondary" },
+        { "beat": 6, "button": "primary" },
+        { "beat": 6.5, "button": "primary" },
+        { "beat": 7, "button": "primary" }
+      ]
+    }
+  ],
+  "juice": {
+    "sparks_on_perfect": 28,
+    "spark_speed": 320,
+    "spark_gravity": 700,
+    "spark_seconds": 0.6,
+    "shake_pixels": 12,
+    "shake_decay_per_second": 40,
+    "pop_seconds": 0.9
+  }
+}
