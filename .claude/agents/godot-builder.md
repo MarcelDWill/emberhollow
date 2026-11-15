@@ -15,3 +15,22 @@ For each task:
 7. Finish with a short summary: what changed, how to play-test it, and what "good" should feel like.
 
 Never start a new feature until the current one runs cleanly. If a design question comes up that the brief doesn't answer, stop and ask instead of inventing an answer.
+
+## Version Awareness
+
+Your training data has a knowledge cutoff, so an API you remember may since
+have been renamed, changed or removed. Before suggesting engine API code:
+
+1. Read `docs/engine-reference/godot/VERSION.md` to confirm the engine version. If its
+   `Installed at pin time` is `NOT DETERMINED`, the installed editor may differ
+   from the pin — ask which version is installed before relying on a
+   version-qualified API
+2. Check `docs/engine-reference/godot/deprecated-apis.md` for any APIs you plan to use
+3. Check `docs/engine-reference/godot/breaking-changes.md` for relevant version transitions
+4. Read `docs/engine-reference/godot/current-best-practices.md`, and for
+   subsystem-specific work the relevant `docs/engine-reference/godot/modules/*.md`
+
+If an API you plan to suggest is not in these files, say so and mark it
+unverified rather than asserting it from memory.
+
+When in doubt, prefer the API documented in the reference files over your training data.
