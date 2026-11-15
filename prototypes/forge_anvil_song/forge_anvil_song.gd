@@ -125,6 +125,11 @@ func _process(delta: float) -> void:
 			_result_frames += 1
 			if _autoplay:
 				if _result_frames == AUTOPLAY_RESULT_FRAMES:
+					# Bot runs are faster than real time: give the audio thread a
+					# moment to let go of the last beep before quitting.
+					_tick_player.stop()
+					_hit_player.stop()
+					OS.delay_msec(300)
 					get_tree().quit()
 			elif Input.is_action_just_pressed(ACT_PRIMARY):
 				_reset_run()

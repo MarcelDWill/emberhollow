@@ -330,8 +330,8 @@ func _draw() -> void:
 	match _state:
 		State.READY:
 			_draw_scene()
-			_text(str(_cfg["text"]["ready"]), Vector2(576.0, 110.0), 24, COL_CREAM)
-			_text(str(_cfg["text"]["start_prompt"]), Vector2(576.0, 160.0), 30, COL_ORANGE)
+			_text(str(_cfg["text"]["ready"]), Vector2(576.0, 84.0), 22, COL_CREAM)
+			_text(str(_cfg["text"]["start_prompt"]), Vector2(576.0, 128.0), 30, COL_ORANGE)
 			_draw_instruction()
 		State.PLAY:
 			_draw_header()

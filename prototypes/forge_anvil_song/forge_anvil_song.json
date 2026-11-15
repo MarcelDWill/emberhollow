@@ -41,7 +41,7 @@
   },
   "text": {
     "title": "Prototype 3: Anvil Song",
-    "ready": "Forge to the beat. Notes slide in from the right; press as each one reaches its ring.",
+    "ready": "Forge to the beat. Press as each note reaches its ring.",
     "start_prompt": "Press SPACE / A to start",
     "retry_prompt": "Press SPACE / A to forge again",
     "instruction": "Top lane: F / X pumps the bellows.   Bottom lane: SPACE / A swings the hammer.   Long notes: hold, then let go at the end.",
