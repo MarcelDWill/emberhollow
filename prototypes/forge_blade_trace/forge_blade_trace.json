@@ -1,0 +1,91 @@
+{
+  "tiers": [
+    { "name": "Crude", "min_score": 0 },
+    { "name": "Fine", "min_score": 40 },
+    { "name": "Superior", "min_score": 60 },
+    { "name": "Masterwork", "min_score": 78 },
+    { "name": "Legendary", "min_score": 92 }
+  ],
+  "ratings": [
+    { "name": "PERFECT", "min_score": 95 },
+    { "name": "GOOD", "min_score": 65 },
+    { "name": "OK", "min_score": 30 },
+    { "name": "MISS", "min_score": 0 }
+  ],
+  "anvil_lines": {
+    "Crude": [
+      "I have seen better edges on a spoon. A wooden spoon.",
+      "Congratulations. You have invented the bent nail.",
+      "My mentor once forged worse than this. Once. He was on fire at the time."
+    ],
+    "Fine": [
+      "It will cut butter. Warm butter. That is still progress, apprentice.",
+      "Fine. Literally. That is the word for it. Do not get excited.",
+      "It holds together, which is more than I expected from you."
+    ],
+    "Superior": [
+      "Hm. I only winced twice. Keep going.",
+      "Someone might actually pay for that. Do not tell them who made it.",
+      "Not bad. I said not bad. Stop grinning."
+    ],
+    "Masterwork": [
+      "I felt that one in my iron. Do it again before I change my mind.",
+      "Careful. Keep this up and I will have nothing left to complain about.",
+      "My old master would have nodded at that. He never nodded at me."
+    ],
+    "Legendary": [
+      "...I have no notes. I hate having no notes.",
+      "Three hundred years bound in iron, and that is the best thing ever made on my back.",
+      "Do not look at me. I am not crying. Anvils do not cry. It is quench water."
+    ]
+  },
+  "text": {
+    "title": "Prototype 4: Blade Trace",
+    "ready": "Draw the dagger out of the hot metal. Follow the outline, and strike at every ring.",
+    "start_prompt": "Press SPACE / A to start",
+    "retry_prompt": "Press SPACE / A to forge again",
+    "instruction": "WASD / left stick: guide the hammer along the line, at your own pace.   SPACE / A: strike when you are on a ring.",
+    "stage_trace": "Tracing",
+    "stage_strike": "Strike!"
+  },
+  "trace": {
+    "points": [
+      [180, 320],
+      [330, 320],
+      [330, 255],
+      [385, 255],
+      [385, 305],
+      [820, 290],
+      [965, 350],
+      [820, 410],
+      [385, 395],
+      [385, 445],
+      [330, 445],
+      [330, 380],
+      [180, 380]
+    ],
+    "strike_points": [2, 4, 6, 8, 10, 12],
+    "max_speed": 220,
+    "acceleration": 900,
+    "perfect_radius": 6,
+    "miss_radius": 36,
+    "off_radius": 44,
+    "look_ahead": 40,
+    "strike_perfect_radius": 6,
+    "strike_miss_radius": 34,
+    "par_seconds": 30,
+    "time_limit_seconds": 50,
+    "late_penalty_per_second": 2,
+    "path_weight": 0.6,
+    "strike_weight": 0.4
+  },
+  "juice": {
+    "sparks_on_perfect": 28,
+    "spark_speed": 320,
+    "spark_gravity": 700,
+    "spark_seconds": 0.6,
+    "shake_pixels": 12,
+    "shake_decay_per_second": 40,
+    "pop_seconds": 0.9
+  }
+}
