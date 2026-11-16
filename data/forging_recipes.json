@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recipes": [
+    {
+      "id": "copper_dagger",
+      "gear_level": 1,
+      "tier_blueprints": {
+        "masterwork": "bp_copper_dagger_masterwork",
+        "legendary": "bp_copper_dagger_legendary"
+      }
+    },
+    {
+      "id": "iron_sword",
+      "gear_level": 3,
+      "tier_blueprints": {
+        "masterwork": "bp_iron_sword_masterwork",
+        "legendary": "bp_iron_sword_legendary"
+      }
+    },
+    {
+      "id": "silver_pickaxe",
+      "gear_level": 5,
+      "tier_blueprints": {
+        "masterwork": "bp_silver_pickaxe_masterwork",
+        "legendary": "bp_silver_pickaxe_legendary"
+      }
+    }
+  ]
+}

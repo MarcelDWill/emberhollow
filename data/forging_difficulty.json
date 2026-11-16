@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "min_factor": 0.6,
+  "max_factor": 1.8,
+  "over_level": {
+    "factor_per_level": 0.15,
+    "max_levels": 5
+  },
+  "mastery": {
+    "requires": { "smithing_level": 3, "quests": ["anvils_first_lesson"], "blueprints": [] },
+    "factor_per_level": 0.06,
+    "max_levels": 5
+  }
+}

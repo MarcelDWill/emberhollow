@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "tiers": [
+    {
+      "id": "crude",
+      "min_score": 0,
+      "requires": { "smithing_level": 1, "quests": [], "recipe_blueprint": false }
+    },
+    {
+      "id": "fine",
+      "min_score": 40,
+      "requires": { "smithing_level": 2, "quests": [], "recipe_blueprint": false }
+    },
+    {
+      "id": "superior",
+      "min_score": 60,
+      "requires": { "smithing_level": 4, "quests": ["open_your_shop"], "recipe_blueprint": false }
+    },
+    {
+      "id": "masterwork",
+      "min_score": 78,
+      "requires": { "smithing_level": 7, "quests": ["guild_commission"], "recipe_blueprint": true }
+    },
+    {
+      "id": "legendary",
+      "min_score": 96,
+      "requires": { "smithing_level": 10, "quests": ["anvils_true_name"], "recipe_blueprint": true }
+    }
+  ]
+}

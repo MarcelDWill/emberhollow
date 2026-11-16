@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "title": "The Forge",
+  "tiers": {
+    "crude": "Crude",
+    "fine": "Fine",
+    "superior": "Superior",
+    "masterwork": "Masterwork",
+    "legendary": "Legendary"
+  },
+  "ratings": {
+    "perfect": "PERFECT",
+    "good": "GOOD",
+    "ok": "OK",
+    "clank": "CLANK"
+  },
+  "stages": {
+    "blade_trace": {
+      "name": "Blade Trace",
+      "intro": "Draw the shape out of the hot metal. Follow the outline and strike at every ring.",
+      "instruction": "WASD / left stick: guide the hammer along the line, at your own pace.   SPACE / A: strike when you are on a ring.",
+      "stage_trace": "Tracing",
+      "stage_strike": "Strike!",
+      "status": "Line accuracy %d%%     Strikes %d / %d",
+      "par": "par"
+    },
+    "anvil_song": {
+      "name": "Anvil Song",
+      "intro": "Work the metal to the beat. Press as each note reaches its ring.",
+      "instruction": "Top lane: F / X pumps the bellows.   Bottom lane: SPACE / A swings the hammer.   Long notes: hold, then let go at the end.",
+      "lead_in": "Get ready",
+      "primary_label": "SPACE / A",
+      "secondary_label": "F / X",
+      "phrases": {
+        "hammer": "Hammer",
+        "quench": "Quench"
+      }
+    },
+    "one_heat": {
+      "name": "One Heat",
+      "intro": "One bar, one fire, one anvil. Heat it, then strike while it glows just right.",
+      "instruction": "Hold F / X to heat the bar in the fire. Let go, then press SPACE / A to strike while the heat is in the bright band.",
+      "stage_fire": "In the fire",
+      "stage_anvil": "On the anvil",
+      "scorched": "SCORCHED",
+      "too_hot": "TOO HOT",
+      "strike_now": "STRIKE!",
+      "heat": "HEAT",
+      "strikes": "Strikes %d / %d",
+      "streak": "STREAK x%d",
+      "seconds": "%d s",
+      "barks": {
+        "streak": [
+          "Hm. Do not stop now.",
+          "That is the rhythm. Keep it.",
+          "I felt that. Again."
+        ],
+        "scorch": [
+          "You cooked it. It is a blade, not a sausage.",
+          "Too long in the fire. Watch the colour, apprentice.",
+          "That smell is your profit burning."
+        ],
+        "cold": [
+          "Cold iron does not move. Back to the fire.",
+          "You are hitting a rock. Heat it first."
+        ]
+      }
+    }
+  },
+  "ready": {
+    "choose": "A / D or left stick: choose what to forge",
+    "start": "Press SPACE / A to start forging",
+    "levels": "Gear level %d     Your smithing level %d",
+    "difficulty_even": "Matched to your level.",
+    "difficulty_harder": "Above your level: every stage is tighter (difficulty x%.2f).",
+    "difficulty_easier": "Below your level and mastered: every stage is more forgiving (difficulty x%.2f).",
+    "mastery_locked": "Below your level, but mastery is still locked: %s",
+    "tier_row": "%s   (score %d+)",
+    "unlocked": "Unlocked",
+    "locked": "Locked: %s"
+  },
+  "flow": {
+    "stage_intro": "Stage %d of %d",
+    "stage_done": "%s  %d"
+  },
+  "result": {
+    "score": "Score %d / 100",
+    "stage_score": "%s %d",
+    "capped": "Your hands earned %s, but this item is capped at %s.",
+    "unlock_hint": "To forge %s: %s",
+    "retry": "Press SPACE / A to forge again"
+  },
+  "requirements": {
+    "smithing_level": "Smithing level %d",
+    "quest": "Quest: %s",
+    "blueprint": "Blueprint: %s",
+    "no_blueprint": "No blueprint exists for this item yet"
+  },
+  "quests": {
+    "open_your_shop": "Open your shop",
+    "guild_commission": "A commission from the guild",
+    "anvils_true_name": "The anvil's true name",
+    "anvils_first_lesson": "The anvil's first lesson"
+  },
+  "recipes": {
+    "copper_dagger": "Copper Dagger",
+    "iron_sword": "Iron Sword",
+    "silver_pickaxe": "Silver Pickaxe"
+  },
+  "blueprints": {
+    "bp_copper_dagger_masterwork": "Masterwork Copper Dagger",
+    "bp_copper_dagger_legendary": "Legendary Copper Dagger",
+    "bp_iron_sword_masterwork": "Masterwork Iron Sword",
+    "bp_iron_sword_legendary": "Legendary Iron Sword",
+    "bp_silver_pickaxe_masterwork": "Masterwork Silver Pickaxe",
+    "bp_silver_pickaxe_legendary": "Legendary Silver Pickaxe"
+  },
+  "anvil_lines": {
+    "crude": [
+      "I have seen better edges on a spoon. A wooden spoon.",
+      "Congratulations. You have invented the bent nail.",
+      "My mentor once forged worse than this. Once. He was on fire at the time."
+    ],
+    "fine": [
+      "It will cut butter. Warm butter. That is still progress, apprentice.",
+      "Fine. Literally. That is the word for it. Do not get excited.",
+      "It holds together, which is more than I expected from you."
+    ],
+    "superior": [
+      "Hm. I only winced twice. Keep going.",
+      "Someone might actually pay for that. Do not tell them who made it.",
+      "Not bad. I said not bad. Stop grinning."
+    ],
+    "masterwork": [
+      "I felt that one in my iron. Do it again before I change my mind.",
+      "Careful. Keep this up and I will have nothing left to complain about.",
+      "My old master would have nodded at that. He never nodded at me."
+    ],
+    "legendary": [
+      "...I have no notes. I hate having no notes.",
+      "Three hundred years bound in iron, and that is the best thing ever made on my back.",
+      "Do not look at me. I am not crying. Anvils do not cry. It is quench water."
+    ]
+  },
+  "anvil_lines_capped": [
+    "Good hands. Shame about the head on top of them. Go and learn something.",
+    "You swing better than you know. That is the problem: what you know.",
+    "Quick fingers do not make a master. Come back when you have earned the rest."
+  ]
+}

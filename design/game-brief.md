@@ -10,7 +10,7 @@ Coral Island with an anvil instead of a hoe. You start your own smithy in a fron
 
 Every feature must serve at least one.
 
-1. **Forging feels great.** Every item is made through a short, skill-based minigame. Better play makes better gear. Difficulty is relative to the character's smithing level: lower-tier gear gets easier as you level, higher-tier gear stays hard. Forging gets the most polish.
+1. **Forging feels great.** Every item is made through a short, skill-based forge job of three stages. Better play makes better gear, up to what the smith has earned: quality tiers are locked behind smithing level, quests, and blueprints. Difficulty is relative to the character's smithing level: gear above it is harder, and once mastery is unlocked, gear below it gets easier. Forging gets the most polish.
 2. **Cozy on top, creepy underneath.** The village is warm and funny, with crude adventurers and pleasant townsfolk. Thornwood Forest (the "Hollow") is eerie and the lore is dark. Cute-versus-sinister contrast, like Cult of the Lamb.
 3. **What you make, you use.** Weapons you forge are the weapons you fight with. You make weapons, armor, and miscellaneous items for townsfolk.
 4. **A town that grows with you.** Orders, friendships, and building projects visibly change the village over the seasons.
@@ -59,16 +59,31 @@ Strength ratings (1 weak to 5 strong). Use these as the starting balance values 
 
 ## Forging
 
-Every item goes through four stages, about 30 to 60 seconds total. Each stage scores 0 to 100; the average sets the quality tier. One or two buttons per stage.
+Every item is one forge job: three stages played in order, about 75 to 90 seconds in total. Each stage scores 0 to 100, and the job's score is the weighted average of the three (equal weights to start). Two buttons plus movement.
 
 | Stage | What you do | Keyboard / gamepad | Skill tested |
 | --- | --- | --- | --- |
-| 1. Heat | Pump the bellows to keep the temperature needle inside a moving zone | Tap Space / A | Rhythm, attention |
-| 2. Hammer | Strike when the shrinking ring hits the target, 3 to 8 strikes per item | Space / A on beat | Timing |
-| 3. Quench | Plunge the blade when its glow hits the right color | Hold and release | Reading cues |
-| 4. Finish | Grind or polish along a path, optional rune slot | Stick / WASD | Steadiness |
+| 1. Blade Trace | Guide a weighted hammer along the item's outline at your own pace and strike at each ring. Going past par time costs points | WASD / left stick, Space / A to strike | Steadiness |
+| 2. Anvil Song | Press as each note reaches its ring: bellows on the top lane, hammer on the bottom lane, long notes held and released on time | F / X (bellows), Space / A (hammer) | Rhythm |
+| 3. One Heat | Hold to heat the bar in the fire, let go, then strike while the heat sits in the bright band. Every strike cools the bar, and overheating scorches it | Hold F / X to heat, Space / A to strike | Judgement under time pressure |
 
-- **Quality tiers:** Crude, Fine, Superior, Masterwork, Legendary.
+One Heat is the heart of the forge and gets the most polish: the bar glows with its heat, it pulses when it is ready to strike, strikes build a streak, and the anvil comments as you work. Space / A is the main button and F / X is the second button everywhere in the forge.
+
+- **Quality tiers:** Crude, Fine, Superior, Masterwork, Legendary. Starting cutoffs: Crude 0, Fine 40, Superior 60, Masterwork 78, Legendary 96.
+- **Tier locks:** skill alone is not enough. Each tier above Crude is locked behind a smithing level, quests, and (for the top tiers) a blueprint for that item. The score earns a tier, then the award climbs from Crude and stops at the first locked tier, so a low-level player who is good at rhythm games cannot make Legendary items. A capped result tells the player what they earned and what would unlock the next tier. Starting locks:
+
+| Tier | Smithing level | Quest | Blueprint for the item |
+| --- | --- | --- | --- |
+| Crude | 1 | none | no |
+| Fine | 2 | none | no |
+| Superior | 4 | Open your shop | no |
+| Masterwork | 7 | A commission from the guild | yes |
+| Legendary | 10 | The anvil's true name | yes |
+
+- **Difficulty by level:** every item has a gear level. Gear above the player's smithing level is harder to forge: timing windows and target sizes shrink and the bar cools faster, by 15% per level above, up to five levels. Gear at the player's level plays at the baseline.
+- **Mastery:** gear below the player's smithing level gets easier (6% per level below, up to five levels), but only after mastery is unlocked. Starting requirements: smithing level 3 and the quest "The anvil's first lesson". Until then, lower gear plays at the baseline.
+- **Tuning lives in data:** every cutoff, lock, requirement, difficulty step, stage timing, and line of anvil dialogue is in JSON under `data/` (see `data/README.md`). The quest names above are placeholders until quests exist.
+- **Rune slot:** left out for now.
 - **Mass production:** after making an item enough times, it can be produced faster, but with a capped quality tier.
 - **Recipe design:** players design and save recipes by desired attributes. The game shows required materials and skill level. Results are never guaranteed; stats depend on skill.
 - **Recycling:** items break down into part of their materials. A Knowledge stat raises the percentage returned and also helps minigames and recipe development.
@@ -128,7 +143,7 @@ Godot 4 and GDScript. Targets: web (itch.io, Cloudflare) for the demo, Steam on 
 
 In:
 - Character creator: four races, three color slots, two outfits
-- Forge with all four stages and the talking anvil
+- Forge with all three stages (Blade Trace, Anvil Song, One Heat), tier locks, and the talking anvil
 - Three recipes (dagger, sword, pickaxe upgrade), three metals (copper, iron, silver)
 - Shop with display racks and three customer types
 - One village map, two named villagers with friendship, one special order
@@ -140,7 +155,7 @@ Out: seasons, romance, other zones, town projects, final art.
 
 ## Build order
 
-1. Forging prototypes: three to five tiny, independent takes on the minigame in `prototypes/`. Marcel plays and picks one.
+1. Forging prototypes: three to five tiny, independent takes on the minigame in `prototypes/`. Marcel plays and picks one. (Done: the forge combines Blade Trace, Anvil Song, and One Heat.)
 2. Core project: GameState and EventBus autoloads, input map, text state dump, save system.
 3. Scenes in order: Forge, Shop, Village, Mine, Character Creator.
 4. Web export and deploy.

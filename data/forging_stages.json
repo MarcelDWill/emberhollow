@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "order": ["blade_trace", "anvil_song", "one_heat"],
+  "flow": {
+    "intro_seconds": 2.4,
+    "stage_done_seconds": 1.5
+  },
+  "ratings": [
+    { "id": "perfect", "min_score": 95 },
+    { "id": "good", "min_score": 65 },
+    { "id": "ok", "min_score": 30 },
+    { "id": "clank", "min_score": 0 }
+  ],
+  "juice": {
+    "strong_min_score": 65,
+    "sparks_on_perfect": 28,
+    "spark_speed": 320,
+    "spark_gravity": 700,
+    "spark_seconds": 0.6,
+    "shake_pixels": 12,
+    "shake_decay_per_second": 40,
+    "pop_seconds": 0.9
+  },
+  "sounds": {
+    "tick": { "hz": 1320, "seconds": 0.04, "volume_db": -12 },
+    "hit": { "hz": 330, "seconds": 0.14, "volume_db": -10 },
+    "strike_perfect": { "hz": 523, "seconds": 0.22, "volume_db": -6 },
+    "strike_good": { "hz": 392, "seconds": 0.18, "volume_db": -8 },
+    "strike_weak": { "hz": 196, "seconds": 0.12, "volume_db": -10 },
+    "in_band": { "hz": 880, "seconds": 0.08, "volume_db": -14 },
+    "scorch": { "hz": 110, "seconds": 0.35, "volume_db": -6 },
+    "stage_done": { "hz": 660, "seconds": 0.3, "volume_db": -8 }
+  },
+  "stages": {
+    "blade_trace": {
+      "weight": 1.0,
+      "difficulty_scaling": {
+        "divide": ["perfect_radius", "miss_radius", "strike_perfect_radius"],
+        "multiply": []
+      },
+      "points": [
+        [180, 320], [330, 320], [330, 255], [385, 255], [385, 305], [820, 290], [965, 350],
+        [820, 410], [385, 395], [385, 445], [330, 445], [330, 380], [180, 380]
+      ],
+      "strike_points": [2, 4, 6, 8, 10, 12],
+      "max_speed": 220,
+      "acceleration": 900,
+      "perfect_radius": 6,
+      "miss_radius": 36,
+      "off_radius": 44,
+      "look_ahead": 40,
+      "strike_perfect_radius": 6,
+      "strike_miss_radius": 34,
+      "par_seconds": 30,
+      "time_limit_seconds": 50,
+      "late_penalty_per_second": 2,
+      "path_weight": 0.6,
+      "strike_weight": 0.4
+    },
+    "anvil_song": {
+      "weight": 1.0,
+      "difficulty_scaling": {
+        "divide": ["perfect_window_seconds", "miss_window_seconds"],
+        "multiply": []
+      },
+      "bpm": 100,
+      "lead_in_beats": 4,
+      "outro_beats": 2,
+      "scroll_pixels_per_beat": 150,
+      "perfect_window_seconds": 0.045,
+      "miss_window_seconds": 0.16,
+      "phrases": [
+        {
+          "id": "hammer",
+          "beats": 16,
+          "notes": [
+            { "beat": 0, "button": "primary" },
+            { "beat": 1, "button": "primary" },
+            { "beat": 2, "button": "primary" },
+            { "beat": 3, "button": "primary" },
+            { "beat": 4, "button": "primary" },
+            { "beat": 4.5, "button": "primary" },
+            { "beat": 5, "button": "primary" },
+            { "beat": 6, "button": "secondary" },
+            { "beat": 7, "button": "primary" },
+            { "beat": 8, "button": "primary" },
+            { "beat": 9, "button": "primary" },
+            { "beat": 10, "button": "primary" },
+            { "beat": 10.5, "button": "primary" },
+            { "beat": 11, "button": "primary" },
+            { "beat": 12, "button": "secondary" },
+            { "beat": 13, "button": "primary" },
+            { "beat": 14, "button": "primary" },
+            { "beat": 14.5, "button": "primary" },
+            { "beat": 15, "button": "primary" }
+          ]
+        },
+        {
+          "id": "quench",
+          "beats": 8,
+          "notes": [
+            { "beat": 0, "button": "secondary" },
+            { "beat": 1, "button": "primary", "hold_beats": 4 },
+            { "beat": 6, "button": "primary" },
+            { "beat": 7, "button": "primary" }
+          ]
+        }
+      ]
+    },
+    "one_heat": {
+      "weight": 1.0,
+      "difficulty_scaling": {
+        "divide": ["perfect_window", "miss_window"],
+        "multiply": ["cool_per_second"]
+      },
+      "time_limit_seconds": 36,
+      "strikes_needed": 24,
+      "start_heat": 0.2,
+      "fire_heat_per_second": 0.2,
+      "fire_roar_per_second": 0.12,
+      "cool_per_second": 0.07,
+      "strike_cool": 0.06,
+      "strike_cooldown_seconds": 0.3,
+      "move_seconds": 0.22,
+      "sweet_heat": 0.72,
+      "perfect_window": 0.04,
+      "miss_window": 0.28,
+      "burn_heat": 0.97,
+      "burn_reset_heat": 0.6,
+      "polish": {
+        "low_time_seconds": 6,
+        "burn_warning_margin": 0.09,
+        "streak_bark_every": 6,
+        "bark_seconds": 2.4,
+        "embers_per_second": 16,
+        "needle_smoothing": 16
+      }
+    }
+  }
+}
